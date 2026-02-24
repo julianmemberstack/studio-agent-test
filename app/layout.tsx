@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { AgentationProvider } from "@/components/AgentationProvider";
 
@@ -30,6 +31,11 @@ export default function RootLayout({
       <body className="font-[family-name:var(--font-body)] antialiased">
         {children}
         <AgentationProvider />
+        <Script
+          src="https://agent.ship.studio/widget.js"
+          data-project="studio-agent-test"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
